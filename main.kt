@@ -12,10 +12,8 @@ fun main(){
     var listStudent=mutableListOf(student1,student2,student3,student4)
     sorting(listStudent)
 
-    var student5=Person("Verite",38,1.5,65.0)
-    var student6=Person("Salma",78,1.9,17.8)
-    var otherStudent= mutableListOf(student5,student6)
-    otherPeople(listStudent,otherStudent)
+
+    otherPeople(listStudent)
 
     var myCar=Car("09889",23.5)
     var youCar=Car("475533",45.8)
@@ -46,11 +44,13 @@ fun sorting(people:List<Person>){
     var sortedList=people.sortedByDescending { person->person.age }
     println(sortedList)
 }
-fun otherPeople (similarList:List<Person>,newlist:List<Person>):List<Person>{
-   var addedLists= similarList.plus(newlist)
+fun otherPeople (oldList:List<Person>):List<Person>{
+    var student5=Person("Verite",38,1.5,65.0)
+    var student6=Person("Salma",78,1.9,17.8)
+    var otherStudent= mutableListOf(student5,student6)
+   var addedLists= oldList.plus(otherStudent)
     println(addedLists)
     return addedLists
-
 
 }
 data class Car(var registration:String,var mileage:Double)
